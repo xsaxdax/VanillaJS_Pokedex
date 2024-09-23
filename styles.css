@@ -1,0 +1,103 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(assets/poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(assets/poppins/Poppins-Bold.ttf);
+  font-weight: bold;
+}
+
+* {
+  font-family: myFirstFont;
+}
+.flex-col {
+  display: flex;
+  display: -webkit-flex;
+  
+  justify-content: flex-end;
+}
+.flex-col *{
+  height: 32px;
+  margin-bottom: 0px;
+  margin-top: 16px;
+}
+
+.rounding-16{
+  border-radius: 16%;
+}
+.coupon {
+  width: 100%;
+  
+  outline: none;
+  margin-right: 16px;
+  box-sizing: border-box;
+  
+}
+
+.coupon-btn {
+  background:#EFEFEF;
+  border: 0;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline;
+  font-size: 0.875;
+  width: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  color: #DC0A2D;
+}
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pokemon-image{
+        width: 72px;height: 72px;padding-left: 16px;padding-right: 16px;
+  }
+  
+
+  .pokemon-name{
+    background-color: #E0E0E0;
+    
+  }
+
+  .card {
+    border:1px solid silver;
+    width: 104px;
+    height: 108px;
+    display: grid;
+    border-style:hidden;
+    outline:none;
+    /*box-shadow: 0 0 3px #333;*/
+  
+    filter:drop-shadow(0px 1px 3px rgba(0,0,0,0.2));
+    
+  }
+  
+
+/* Element | http://localhost:5500/ */
+
+.card > p:nth-child(1) {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+img.center-screen {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  padding-top: 16px;
+}
+
+
+#card-wrapper { background-color: #EFEFEF; display: grid;   grid-gap: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr) ) ; 
+padding-top: 24px;
+padding-left: 12px;
+padding-right: 12px;
+}

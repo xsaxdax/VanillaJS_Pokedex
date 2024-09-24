@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
     onSearch: ({ currentValue }) => {
       // static file
       const api = "/Pokemon_Names_Type.json";
-  
+      //let toRemoveFromView = 
+      //document.getElementsByClassName('card')
       return new Promise((resolve) => {
         fetch(api)
           .then((response) => response.json())
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   
     onResults: ({ currentValue, matches }) => {
+      
       return matches
         .map((el) => {
           return `

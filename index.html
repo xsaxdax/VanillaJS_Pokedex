@@ -26,66 +26,28 @@
 
     <div class="header" id="myHeader">
         <div style="display: flex; flex-flow: column wrap;  margin-left: 12px;">
-             <div class="flex-col" style="justify-content: start;">
-             <img src="pokeball.svg" style=" height: 24px;
+            <div class="flex-col" style="justify-content: start;">
+                <img src="pokeball.svg" style=" height: 24px;
         margin-top: 20px;" />
                 <h1 class="AppTitle" style="font-size:24px; line-height:32px;
  color: white; margin-left: 16px"> Pokedex</h1>
-        </div>
-            <div class="flex-col" style="margin-bottom: 8px;">
-            
-                <input type="text" class="coupon input-res">
+            </div>
+            <div class="flex-col2" style="margin-bottom: 8px;">
+                <div class="auto-search-wrapper max-height loupe" >
+                <input style="margin-top: 0px;" type="text" class="coupon input-res"id="static" >
+                </div>
                 <button class="coupon-btn">#</button>
             </div>
-            <!--
-   <div style="display: flex; flex-flow: row wrap;">
-<input class="auto-search-wrapper max-height loupe" style="margin-top: 16px; height: 32px; width: 260px;padding-bottom: 0px;padding-top: 0px;border-bottom-width: 0px;border-bottom-style: solid;border-left-width: 0px;border-left-style: solid;border-right-width: 0px;border-right-style: solid;border-top-width: 0px;border-top-style: solid;padding-right: 0px;padding-left: 0px;" type="text" id="static" aria-label="Search for a name" autocomplete="off" placeholder="Search" aria-owns="auto-static-results" aria-expanded="false" aria-autocomplete="list" role="combobox">
-            <button style="margin-top: 16px; height: 32px; width: 32px; margin-left: 8px; padding-top: 0px;
-            padding-bottom: 0px;
-            border-bottom-width: 0px;
-            border-bottom-style: solid;
-            border-right-width: 0px;
-            border-right-style: solid;
-            border-top-width: 0px;
-            border-top-style: solid;
-            border-left-width: 0px;
-            border-left-style: solid;
-            padding-left: 0px;
-            padding-right: 0px;"></button>    
- </div>
--->
+            
+        
         </div>
 
 
     </div>
 
-    <!--<div class="card" height="108" width="104" style="border:1px solid silver; border-radius: 8%;">
-        <p style="font-size: 8px; padding-top:4px;  text-align:right;padding-right: 8px; height: 14px; margin-bottom: 0px; color: #666666; ">#001</p>
-          <img class="pokemon-image" loading="lazy" src="/assets/1.png" alt="1"; style="width: 72px;height: 72px; z-index: 1; margin-bottom: -26px;" />
-          <div style=" height:44px; z-index: 0; border-radius: 7%; background-color: #EFEFEF; ">
-        <p class="center-screen " style="padding-bottom: 4px;
-         border-radius: 7% 7% 10% 10%;   font-size: 10px;
-         z-index: 1;margin-top: 26px;">Bulbasaur</p>
-          </div>
-    </div>
+<div class="info-d"></div>
     
-    <div class="card_2" style="height: 108px; width: 104px;border:1px solid silver; border-radius: 8%;">
-        <p style="font-size: 8px; padding-top:4px; margin: 0px; text-align:right;padding-right: 8px; height: 14px;  color: #666666; ">#001</p>
-          <img class="pokemon-image" loading="lazy" src="/assets/1.png" alt="1"; style="width: 72px;height: 72px; " />
-          <p class="center-screen" style="
-          transform: translateY(-26px);
-          border-radius: 7% 7% 10% 10%;
-          padding-top: 44px;
-          font-size: 10px; margin-top: 0px; background-color: #EFEFEF;">Bulbasaur</p>
-          
-    </div>-->
-    <!--
-    <div class="info-d" style="width: 108px;height: 104px;">
-    -->
-    
-
-    </div>
-    <div id="card-wrapper" class="card-container"  >
+    <div id="card-wrapper" class="card-container">
         <script>
             let referenceElement = document.getElementById('card-wrapper');
             const interval = {
@@ -93,18 +55,33 @@
                 //there are pokemon after 1025 who are arent real pokemon fix that....
                 limit: 1025,
             };
-            const P = new Pokedex.Pokedex({ cacheImages: true });
+            const P = new Pokedex.Pokedex({cache:true, cacheImages: true });
             (async () => {
                 const golduck = await P.getPokemonsList(interval)
+                const displayIdNumber=
+                 (i) =>{
+                switch (true) {
+                case (i < 9):
+                return "#00"+(+i+1);
+    case (i < 99):
+        return "#0" +(+i+1)
+    default:
+        return "#"+(+i+1);
+}}
                 for (const [key, value] of Object.entries(golduck.results)) {
                     // console.log(key, value.name);
                     const temp = `
-                    <div class="card" height="108" width="104" style="border:1px solid silver; content-visibility:auto; border-radius: 7%;">
-                <p style="padding-top:4px; max-height: fit-content; text-align:right;padding-right: 8px;">${+key + 1}</p>
-                  <img class="center-screen pokemon-image" loading="lazy" src="/assets/${+key + 1}.png" alt="${value.name}"width: 72px;height: 72px;"/>
-          
-                <p class="center-screen pokemon-name" style=" height:44px; border-radius: 7%;   font-size: 12px;">${value.name}</p>
-            </div>`
+                    <div class="card ${value.name}" height="108" width="104" style="overflow: hidden; border:1px solid silver; border-radius: 8%; background: #FFFFFF;">
+        <p style="font-size: 8px; padding-top:4px;  text-align:right;padding-right: 8px; height: 14px; margin-bottom: 0px; color: #666666; ">${displayIdNumber(key)}</p>
+          <img class="pokemon-image" loading="lazy" src="/assets/${+key + 1}.png" alt="${value.name}" style="width: 72px;height: 72px; z-index: 1; margin-bottom: -26px;" />
+          <div style=" height:44px; z-index: 0; border-radius: 7%; background-color: #E0E0E0; ">
+        <p class="center-screen " style="padding-bottom: 4px;
+         border-radius: 7% 7% 10% 10%;   font-size: 10px;
+         z-index: 1;margin-top: 26px; text-transform: capitalize;">${value.name}</p>
+          </div>
+    </div>
+                    
+                `
                     referenceElement.insertAdjacentHTML("beforeend", temp)
                     //referenceElement.parentNode.insertBefore(temp, referenceElement.nextSibling);
                 }

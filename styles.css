@@ -32,6 +32,13 @@
 
   justify-content: flex-end;
 }
+.auto-search-wrapper ul {
+  list-style:none;
+  margin:0;
+  overflow:scroll;
+  padding:0;
+  max-height: 215px;
+}
 
 .auto-search-wrapper li {
   height: 32px;
@@ -45,7 +52,6 @@
   margin-bottom: 0px;
   padding-top: 0px;
 }
-
 
 
 .rounding-16 {
@@ -94,6 +100,7 @@
 }
 
 
+
 .pokemon-name {
   background-color: #E0E0E0;
 
@@ -139,10 +146,27 @@ img.center-screen {
   padding-bottom: 24px;
   border-radius: 8px;
 }
+
 /*input field*/
 #static {
   margin-top: 0px;
   margin-top: 4px;
   padding-bottom: 0px;
   padding-top: 0px;
-  }
+}
+
+.auto-clear {
+  margin-top: -4px;
+}
+
+#auto-static-results > li{
+  height: 13px;
+  padding-top: 0px;
+  border-bottom: solid 1px #EFEFEF;
+}
+
+#auto-static-results:first-child{
+  border-top: solid 1px #EFEFEF;
+
+} 
+

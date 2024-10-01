@@ -53,6 +53,9 @@
   padding-top: 0px;
 }
 
+.loupe {
+	margin-top: -2px;
+}
 
 .rounding-16 {
   border-radius: 16%;

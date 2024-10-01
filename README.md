@@ -127,7 +127,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] SVG Logo
+- [ ] Screenshots of current state 
+- [ ] SVG Logo for README
 - [ ] Add detail view
 - [ ] Add responsiveness
     - [ ] Header and search

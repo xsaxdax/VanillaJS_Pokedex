@@ -32,61 +32,27 @@
                 <h1 class="AppTitle" style="font-size:24px; line-height:32px;
  color: white; margin-left: 16px"> Pokedex</h1>
             </div>
-            <div class="flex-col2" style="margin-bottom: 8px;">
+            <div class="flex-col2" style="height: 32px;margin-bottom: 8px;">
                 <div class="auto-search-wrapper max-height loupe" >
-                <input style="margin-top: 0px;" type="text" class="coupon input-res"id="static" >
+                    <input style=" margin-top: 0px;
+                    margin-top: 4px;
+                    padding-bottom: 0px;
+                    padding-top: 0px;"
+                    type="text" class="coupon input-res" id="static">
                 </div>
-                <button class="coupon-btn">#</button>
+                <button class="coupon-btn" style="width: 32px;">#</button>
             </div>
-            
-        
+
+
         </div>
 
 
     </div>
 
-<div class="info-d"></div>
-    
+    <div class="info-d"></div>
+
     <div id="card-wrapper" class="card-container">
-        <script>
-            let referenceElement = document.getElementById('card-wrapper');
-            const interval = {
-                //offset: 134,
-                //there are pokemon after 1025 who are arent real pokemon fix that....
-                limit: 1025,
-            };
-            const P = new Pokedex.Pokedex({cache:true, cacheImages: true });
-            (async () => {
-                const golduck = await P.getPokemonsList(interval)
-                const displayIdNumber=
-                 (i) =>{
-                switch (true) {
-                case (i < 9):
-                return "#00"+(+i+1);
-    case (i < 99):
-        return "#0" +(+i+1)
-    default:
-        return "#"+(+i+1);
-}}
-                for (const [key, value] of Object.entries(golduck.results)) {
-                    // console.log(key, value.name);
-                    const temp = `
-                    <div class="card ${value.name}" height="108" width="104" style="overflow: hidden; border:1px solid silver; border-radius: 8%; background: #FFFFFF;">
-        <p style="font-size: 8px; padding-top:4px;  text-align:right;padding-right: 8px; height: 14px; margin-bottom: 0px; color: #666666; ">${displayIdNumber(key)}</p>
-          <img class="pokemon-image" loading="lazy" src="/assets/${+key + 1}.png" alt="${value.name}" style="width: 72px;height: 72px; z-index: 1; margin-bottom: -26px;" />
-          <div style=" height:44px; z-index: 0; border-radius: 7%; background-color: #E0E0E0; ">
-        <p class="center-screen " style="padding-bottom: 4px;
-         border-radius: 7% 7% 10% 10%;   font-size: 10px;
-         z-index: 1;margin-top: 26px; text-transform: capitalize;">${value.name}</p>
-          </div>
-    </div>
-                    
-                `
-                    referenceElement.insertAdjacentHTML("beforeend", temp)
-                    //referenceElement.parentNode.insertBefore(temp, referenceElement.nextSibling);
-                }
-            })()
-        </script>
+      
     </div>
 
     <!--[if lt IE 7]>

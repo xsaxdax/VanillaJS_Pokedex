@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function () {
     preventScrollUp: true,  
     onSearch: ({ currentValue }) => {
       // static file
-      const api = "/Pokemon_Names_Type.json";
+      const api = "./Pokemon_Names_Type.json";
       return new Promise((resolve) => {
         fetch(api)
           .then((response) => response.json())
@@ -116,7 +116,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //on first render of the input(Autosuggest) field
     onRender: () => {
-      const api = "/Pokemon_Names_Type.json";
+      const api = "./Pokemon_Names_Type.json";
       return new Promise((resolve) => {
         fetch(api)
           .then((response) => response.json())

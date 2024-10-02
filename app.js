@@ -13,7 +13,7 @@ const cardTemplate = (id, name) => {
   return `
   <div class="card " id="${name}" height="108" width="104" style="overflow: hidden; border:1px solid silver; border-radius: 8%; background: #FFFFFF;">
         <p style="font-size: 8px; padding-top:4px;  text-align:right;padding-right: 8px; height: 14px; margin-bottom: 0px; color: #666666; ">${displayIdNumber(id)}</p>
-          <img class="pokemon-image" loading="lazy" src="/assets/${+id + 1}.png" alt="${name}" style="width: 72px;height: 72px; z-index: 1; margin-bottom: -26px;" />
+          <img class="pokemon-image" loading="lazy" src="./assets/${+id + 1}.png" alt="${name}" style="width: 72px;height: 72px; z-index: 1; margin-bottom: -26px;" />
           <div style=" height:44px; z-index: 0; border-radius: 7%; background-color: #E0E0E0; ">
         <p class="center-screen " style="padding-bottom: 4px;
          border-radius: 7% 7% 10% 10%;   font-size: 10px;
